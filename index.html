@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <div class="chart">
+        <h1>Bar Chart</h1>
+        <ul class="number">
+            <li><span>100%</span></li>
+            <li><span>50%</span></li>
+            <li><span>0%</span></li>
+        </ul>
+
+        <ul class="bars">
+            <li><div class="bar" data-percentage="50"><span>January</span></div></li>
+            <li><div class="bar" data-percentage="30"><span>February</span></div></li>
+            <li><div class="bar" data-percentage="60"><span>March</span></div></li>
+            <li><div class="bar" data-percentage="10"><span>April</span></div></li>
+            <li><div class="bar" data-percentage="80"><span>May</span></div></li>
+
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        $(function(){
+            $('.bars li .bar').each(function(key, bar){
+             var percentage = $(this).data('percentage');
+             $(this).animate({
+                 'height': percentage + '%'
+             });
+            });
+        });
+    </script>
+</body>
+</html>
